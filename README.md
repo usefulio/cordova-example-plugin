@@ -8,7 +8,7 @@ How to run example?
 
 To add this plugin to your cordova project, type:
 
-	cordova plugin add https://github.com/perak/cordova-example-plugin.git
+	cordova plugin add https://github.com/usefulio/cordova-example-plugin.git
 
 And include SamplePlugin.js in your www/index.html  
 
@@ -163,7 +163,10 @@ This file tells cordova how to deal with plugin. Package name, class name and (r
 For more details, refer:
 
 [Cordova Plugin Development Guide](http://docs.phonegap.com/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide)
-<br />and
+<br />
+and
+<br />
 [Android Plugins](http://docs.phonegap.com/en/3.4.0/guide_platforms_android_plugin.md.html#Android%20Plugins)
+<br />
 <br />
 That's it :)
