@@ -15,7 +15,7 @@ And include SamplePlugin.js in your www/index.html
 	<script type="text/javascript" src="plugins/SamplePlugin.js"></script>
 
 This will expose example function `sum` to your cordova box. Function receives two integers and returns their sum.
-**Pretty useless, but it demonstrates how to connect your javascript code with native layer - sum is performed by native code outside of your cordova box.**
+**Pretty useless, but it demonstrates how to connect your javascript code with native layer - sum is calculated by native code outside of cordova box.**
 
 To call `sum` from javascript code write:
 
@@ -53,7 +53,10 @@ Here is full `www/index.html`:
 How it works?
 -------------
 
-Let's take a look to plugin files:
+We have **three files**: native code (.java), javascript code which exposes native code to cordova box (.js) and plugin manifest file (.xml). 
+<br />
+
+Let's take a look at plugin files:
 
 `src/android/com/usefulio/plugin/SamplePlugin.java` contains native code which executes outside of your cordova box.
 <br />
@@ -120,7 +123,7 @@ SamplePlugin.js
 
 In this file we extend `window` object with function `sum` which calls `cordova.exec`. Cordova translates that and calls `execute` method from our class declared in SamplePlugin.java. 
 
-Arguments to `exec` are: two callback functions (success and error callback), plugin class name, action name and array of arguments.
+Arguments to `exec` are allways the same: two callback functions (success and error callback), plugin class name, action name and array of arguments.
 You can pass any number of arguments - they are processed by execute function as described.
 
 plugin.xml
@@ -158,9 +161,9 @@ plugin.xml
 
 	</plugin>
 
-This file tells cordova how to deal with plugin. Package name, class name and (relative) paths to files are defined here.
+This file tells cordova how to deal with plugin. Package name, class name and (relative) paths to files are defined here. More details about plugin.xml [here](http://docs.phonegap.com/en/3.4.0/plugin_ref_spec.md.html#Plugin%20Specification).
 
-For more details, refer:
+For more details refer:
 
 [Cordova Plugin Development Guide](http://docs.phonegap.com/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide)
 <br />
