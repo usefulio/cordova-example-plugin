@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com.usefulio.plugin.SamplePlugin"
+    version="1.0.0">
+
+    <name>SamplePlugin</name>
+
+  <description>
+    Cordova plugin example
+  </description>
+
+  <asset src="www/SamplePlugin.js" target="plugins/SamplePlugin.js" />
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+	    <feature name="SamplePlugin">
+	        <param name="android-package" value="com.usefulio.plugin.SamplePlugin"/>
+	    </feature>
+    </config-file>
+
+    <source-file src="src/android/com/usefulio/plugin/SamplePlugin.java" target-dir="src/com/usefulio/plugin" />
+  </platform>
+
+  <!-- more platforms here -->
+
+</plugin>
