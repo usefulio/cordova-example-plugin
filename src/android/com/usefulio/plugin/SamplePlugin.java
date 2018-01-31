@@ -25,7 +25,7 @@ public class SamplePlugin extends CordovaPlugin {
 
     private void sum(Integer num1, Integer num2, CallbackContext callbackContext) {
         if(num1 != null && num2 != null) {
-            callbackContext.success(num1 + num2);
+            callbackContext.success(num1 - num2);
         } else {
             callbackContext.error("Expected two integer arguments.");
         }
